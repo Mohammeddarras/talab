@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:talab/add_food.dart';
 import 'package:talab/reorder_card.dart';
 import 'category.dart';
 import 'list_categ.dart';
@@ -14,14 +15,18 @@ class _homePageState extends State<homePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: myAppBar(),
-      body: Column(
-        children: [
-          myTitle(),
-          ListCateg(),
-          orderAgainText(),
-          listOrder(),
-          buttonRest(),
-        ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            myTitle(),
+            ListCateg(),
+            orderAgainText(),
+            listOrder(),
+            addFood(),
+            buttonRest(),
+          ],
+        ),
       ),
     );
   }
